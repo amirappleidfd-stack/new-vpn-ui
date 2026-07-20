@@ -1,21 +1,20 @@
-FROM alpine:3.19
+FROM debian:12-slim
 
 ENV TZ=Asia/Tehran
 
-RUN apk add --no-cache \
+RUN apt update && apt install -y \
     curl \
     bash \
     ca-certificates \
-    socat \
     tzdata \
-    sqlite \
-    unzip \
-    wget
+    sqlite3 \
+    socat \
+    && rm -rf /var/lib/apt/lists/*
+
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Tehran /etc/localtime
 
 
-# دانلود x-ui binary
 RUN mkdir -p /usr/local/x-ui \
     && curl -L \
     https://github.com/Sir-MmD/vpn-ui/releases/download/v1.7.9/vpn-ui-amd64 \
@@ -23,19 +22,11 @@ RUN mkdir -p /usr/local/x-ui \
     && chmod +x /usr/local/x-ui/x-ui
 
 
-# مسیرهای دیتا
-RUN mkdir -p \
-    /etc/x-ui \
-    /var/log/x-ui \
-    /usr/local/x-ui/bin
+RUN mkdir -p /etc/x-ui /var/log/x-ui
 
 
 COPY start.sh /start.sh
-
 RUN chmod +x /start.sh
-
-
-EXPOSE 2053
 
 
 CMD ["/start.sh"]
