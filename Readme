@@ -1,203 +1,177 @@
-# 🕷️ SPiDER VPN - VPN-UI Railway Deployment
+<div align="center">
 
-![Docker](https://img.shields.io/badge/Docker-Supported-blue)
-![Railway](https://img.shields.io/badge/Railway-Deploy-purple)
-![Xray](https://img.shields.io/badge/Xray-Core-green)
+# 🕷️ SPiDER VPN
+### 🚀 X-UI / VPN-UI Railway Deployment
 
-## 🚀 معرفی پروژه
+<p>
+  <b>Deploy your VPN Panel easily on Railway with Docker</b>
+</p>
 
-این پروژه یک نسخه آماده از **VPN-UI / X-UI** برای اجرا روی سرویس ابری **Railway** است.
+<br>
 
-با این پروژه می‌توانید بدون نیاز به نصب دستی روی VPS، پنل VPN خود را با Docker روی Railway اجرا کنید.
+<img src="https://img.shields.io/badge/Railway-Deploy-purple?style=for-the-badge&logo=railway">
+<img src="https://img.shields.io/badge/Docker-Supported-blue?style=for-the-badge&logo=docker">
+<img src="https://img.shields.io/badge/Xray-Core-green?style=for-the-badge">
 
----
+</div>
 
-# ⭐ امکانات
-
-✅ نصب خودکار VPN-UI  
-✅ نصب و اجرای Xray Core  
-✅ پشتیبانی از VLESS / VMess / Trojan  
-✅ سازگار با Railway  
-✅ Docker آماده Deploy  
-✅ تنظیم خودکار پورت Railway  
-✅ اجرای بدون Systemd  
-✅ مناسب برای Cloud Deployment  
 
 ---
 
-# 🛠️ آموزش نصب
+# 📌 About
 
-## مرحله 1 - ساخت اکانت GitHub
+**SPiDER VPN** is a ready-to-deploy VPN Panel based on **VPN-UI / X-UI**.
 
-ابتدا وارد سایت GitHub شوید:
+This project is optimized for:
+
+- ☁️ Railway Cloud
+- 🐳 Docker Deployment
+- ⚡ Automatic Xray Setup
+- 🔥 Simple Installation
+
+
+---
+
+# ✨ Features
+
+| Feature | Status |
+|---|---|
+| 🚀 Railway Deploy | ✅ |
+| 🐳 Docker Support | ✅ |
+| ⚡ Xray Core | ✅ |
+| 🔐 VLESS Support | ✅ |
+| 🔐 VMess Support | ✅ |
+| 🔐 Trojan Support | ✅ |
+| 💾 SQLite Database | ✅ |
+| 🔄 Auto Start | ✅ |
+| 🌐 Cloud Ready | ✅ |
+
+
+---
+
+# 🚀 Installation Guide
+
+
+## 1️⃣ Create GitHub Account
+
+First create a GitHub account:
 
 ```
 https://github.com
 ```
 
-اگر اکانت ندارید:
+After creating your account, login.
 
-1. روی Sign Up کلیک کنید
-2. ایمیل خود را وارد کنید
-3. اکانت بسازید
-4. وارد GitHub شوید
 
 ---
 
-# مرحله 2 - Fork کردن پروژه
+## 2️⃣ Fork This Repository
 
-به صفحه اصلی پروژه بروید:
+Open this repository:
 
 ```
-PROJECT_LINK
+YOUR_GITHUB_REPOSITORY_LINK
 ```
 
-بالا سمت راست روی گزینه:
+Click:
 
 ```
 Fork
 ```
 
-کلیک کنید.
+Now the project will be copied into your GitHub account.
 
-اکنون یک نسخه از پروژه داخل اکانت GitHub شما ساخته می‌شود.
 
 ---
 
-# مرحله 3 - ساخت اکانت Railway
+## 3️⃣ Create Railway Account
 
-وارد سایت Railway شوید:
+Go to:
 
 ```
 https://railway.app
 ```
 
-با گزینه:
+Login with GitHub.
 
-```
-Login with GitHub
-```
-
-وارد شوید.
 
 ---
 
-# مرحله 4 - Deploy روی Railway
+## 4️⃣ Deploy on Railway
 
-در Railway:
-
-1. روی:
+Inside Railway:
 
 ```
 New Project
-```
-
-کلیک کنید.
-
-
-2. گزینه:
-
-```
+        ↓
 Deploy from GitHub Repo
+        ↓
+Select your Fork
+        ↓
+Deploy
 ```
 
-را انتخاب کنید.
 
+Wait until the build finishes.
 
-3. پروژه Fork شده را انتخاب کنید.
-
-
-4. صبر کنید تا Build کامل شود.
 
 ---
 
-# مرحله 5 - تنظیم پورت
+# ⚙️ Railway Configuration
 
-بعد از Deploy وارد بخش:
+
+Go to:
 
 ```
+Project
+ ↓
 Variables
 ```
 
-شوید.
-
-یک متغیر جدید بسازید:
+Add:
 
 ```
 PORT=2083
 ```
 
-پورت پنل:
+
+Panel Port:
 
 ```
 2083
 ```
 
-خواهد بود.
 
 ---
 
-# مرحله 6 - فعال کردن دامنه Railway
+# 🌐 Open Panel
 
-در Railway:
 
-بروید به:
+After deployment:
+
+Go to:
 
 ```
 Settings
-```
-
-سپس:
-
-```
+        ↓
 Networking
-```
-
-و گزینه:
-
-```
+        ↓
 Generate Domain
 ```
 
-را فعال کنید.
 
----
-
-# ورود به پنل
-
-بعد از Deploy آدرس شما شبیه این است:
+Your panel address:
 
 ```
 https://YOUR-PROJECT.up.railway.app
 ```
 
-باز کنید.
-
-پنل روی پورت:
-
-```
-2083
-```
-
-اجرا می‌شود.
 
 ---
 
-# بررسی لاگ‌ها
+# 📜 Logs Check
 
-در Railway بخش:
-
-```
-Deployments
-```
-
-سپس:
-
-```
-Logs
-```
-
-باید چیزی شبیه این ببینید:
+Successful startup:
 
 ```
 Starting x-ui
@@ -207,12 +181,15 @@ Web server running HTTP on 0.0.0.0:2083
 vpn-ui panel listening on port 2083
 ```
 
+
 ---
 
-# 🐳 ساختار فایل‌ها
+# 🐳 Project Structure
+
 
 ```
-.
+SPiDER-VPN
+│
 ├── Dockerfile
 ├── start.sh
 ├── railway.toml
@@ -220,144 +197,125 @@ vpn-ui panel listening on port 2083
 └── LICENSE
 ```
 
----
-
-# Docker Deployment
-
-این پروژه شامل:
-
-- Dockerfile
-- Start Script
-- Railway Configuration
-
-است.
-
-Railway به صورت خودکار:
-
-```
-Build
- ↓
-Install Dependencies
- ↓
-Download VPN-UI
- ↓
-Start Xray
- ↓
-Run Panel
-```
-
-را انجام می‌دهد.
 
 ---
 
-# ⚙️ تنظیمات
+# 🔥 How It Works
 
-پورت پیش‌فرض:
-
-```
-2083
-```
-
-Xray Core:
 
 ```
-Auto Installed
+GitHub Repository
+
+        ↓
+
+Railway Build
+
+        ↓
+
+Docker Container
+
+        ↓
+
+VPN-UI
+
+        ↓
+
+Xray Core
+
+        ↓
+
+VPN Panel
 ```
 
-Database:
-
-```
-SQLite
-```
 
 ---
 
-# ❗ مشکلات رایج
+# ⚠️ Troubleshooting
 
-## پنل باز نمی‌شود
 
-بررسی کنید:
+### Panel not opening?
+
+Check:
 
 ```
 PORT=2083
 ```
 
-در Variables وجود داشته باشد.
 
+### Build failed?
 
----
-
-## Build Error
-
-ابتدا:
+Try:
 
 ```
 Redeploy
 ```
 
-را امتحان کنید.
+from Railway dashboard.
+
+
+### Wrong Port?
+
+Check:
+
+```
+Railway Logs
+```
 
 
 ---
 
-## پورت اشتباه
+# 📢 Official Channels
 
-لاگ را بررسی کنید:
 
-```
-Logs → Deployments
-```
+<div align="center">
 
----
-
-# 📢 کانال‌ها
 
 ## 👨‍💻 Developer
 
-Telegram:
+<a href="https://t.me/g1ithub">
+Telegram
+</a>
 
-https://t.me/g1ithub
 
+<br><br>
 
----
 
 ## 🕷️ SPiDER VPN
 
-Telegram:
+<a href="https://t.me/SPiDER_VPN1">
+Telegram Channel
+</a>
 
-https://t.me/SPiDER_VPN1
+
+</div>
 
 
 ---
 
-# ❤️ حمایت از پروژه
+# ⭐ Support
 
-اگر پروژه برای شما مفید بود:
+If you like this project:
 
-⭐ Star بدهید
+⭐ Star this repository
 
-و با دوستان خود به اشتراک بگذارید.
+🔄 Share it with others
+
 
 ---
 
 # ⚠️ Disclaimer
 
-این پروژه برای استفاده شخصی، آموزشی و تستی ارائه شده است.
+This project is provided for educational and personal use.
 
-مسئولیت استفاده از آن بر عهده کاربر است.
+The user is responsible for complying with local laws and service provider rules.
+
 
 ---
 
-# 👑 Credits
+<div align="center">
 
-Developed by:
+### 🕷️ SPiDER VPN Team
 
-🕷️ SPiDER VPN Team
+Made with ❤️ for the community
 
-Telegram:
-
-https://t.me/SPiDER_VPN1
-
-Developer:
-
-https://t.me/g1ithub
+</div>
