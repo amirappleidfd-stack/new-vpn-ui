@@ -1,0 +1,363 @@
+# 🕷️ SPiDER VPN - VPN-UI Railway Deployment
+
+![Docker](https://img.shields.io/badge/Docker-Supported-blue)
+![Railway](https://img.shields.io/badge/Railway-Deploy-purple)
+![Xray](https://img.shields.io/badge/Xray-Core-green)
+
+## 🚀 معرفی پروژه
+
+این پروژه یک نسخه آماده از **VPN-UI / X-UI** برای اجرا روی سرویس ابری **Railway** است.
+
+با این پروژه می‌توانید بدون نیاز به نصب دستی روی VPS، پنل VPN خود را با Docker روی Railway اجرا کنید.
+
+---
+
+# ⭐ امکانات
+
+✅ نصب خودکار VPN-UI  
+✅ نصب و اجرای Xray Core  
+✅ پشتیبانی از VLESS / VMess / Trojan  
+✅ سازگار با Railway  
+✅ Docker آماده Deploy  
+✅ تنظیم خودکار پورت Railway  
+✅ اجرای بدون Systemd  
+✅ مناسب برای Cloud Deployment  
+
+---
+
+# 🛠️ آموزش نصب
+
+## مرحله 1 - ساخت اکانت GitHub
+
+ابتدا وارد سایت GitHub شوید:
+
+```
+https://github.com
+```
+
+اگر اکانت ندارید:
+
+1. روی Sign Up کلیک کنید
+2. ایمیل خود را وارد کنید
+3. اکانت بسازید
+4. وارد GitHub شوید
+
+---
+
+# مرحله 2 - Fork کردن پروژه
+
+به صفحه اصلی پروژه بروید:
+
+```
+PROJECT_LINK
+```
+
+بالا سمت راست روی گزینه:
+
+```
+Fork
+```
+
+کلیک کنید.
+
+اکنون یک نسخه از پروژه داخل اکانت GitHub شما ساخته می‌شود.
+
+---
+
+# مرحله 3 - ساخت اکانت Railway
+
+وارد سایت Railway شوید:
+
+```
+https://railway.app
+```
+
+با گزینه:
+
+```
+Login with GitHub
+```
+
+وارد شوید.
+
+---
+
+# مرحله 4 - Deploy روی Railway
+
+در Railway:
+
+1. روی:
+
+```
+New Project
+```
+
+کلیک کنید.
+
+
+2. گزینه:
+
+```
+Deploy from GitHub Repo
+```
+
+را انتخاب کنید.
+
+
+3. پروژه Fork شده را انتخاب کنید.
+
+
+4. صبر کنید تا Build کامل شود.
+
+---
+
+# مرحله 5 - تنظیم پورت
+
+بعد از Deploy وارد بخش:
+
+```
+Variables
+```
+
+شوید.
+
+یک متغیر جدید بسازید:
+
+```
+PORT=2083
+```
+
+پورت پنل:
+
+```
+2083
+```
+
+خواهد بود.
+
+---
+
+# مرحله 6 - فعال کردن دامنه Railway
+
+در Railway:
+
+بروید به:
+
+```
+Settings
+```
+
+سپس:
+
+```
+Networking
+```
+
+و گزینه:
+
+```
+Generate Domain
+```
+
+را فعال کنید.
+
+---
+
+# ورود به پنل
+
+بعد از Deploy آدرس شما شبیه این است:
+
+```
+https://YOUR-PROJECT.up.railway.app
+```
+
+باز کنید.
+
+پنل روی پورت:
+
+```
+2083
+```
+
+اجرا می‌شود.
+
+---
+
+# بررسی لاگ‌ها
+
+در Railway بخش:
+
+```
+Deployments
+```
+
+سپس:
+
+```
+Logs
+```
+
+باید چیزی شبیه این ببینید:
+
+```
+Starting x-ui
+
+Web server running HTTP on 0.0.0.0:2083
+
+vpn-ui panel listening on port 2083
+```
+
+---
+
+# 🐳 ساختار فایل‌ها
+
+```
+.
+├── Dockerfile
+├── start.sh
+├── railway.toml
+├── README.md
+└── LICENSE
+```
+
+---
+
+# Docker Deployment
+
+این پروژه شامل:
+
+- Dockerfile
+- Start Script
+- Railway Configuration
+
+است.
+
+Railway به صورت خودکار:
+
+```
+Build
+ ↓
+Install Dependencies
+ ↓
+Download VPN-UI
+ ↓
+Start Xray
+ ↓
+Run Panel
+```
+
+را انجام می‌دهد.
+
+---
+
+# ⚙️ تنظیمات
+
+پورت پیش‌فرض:
+
+```
+2083
+```
+
+Xray Core:
+
+```
+Auto Installed
+```
+
+Database:
+
+```
+SQLite
+```
+
+---
+
+# ❗ مشکلات رایج
+
+## پنل باز نمی‌شود
+
+بررسی کنید:
+
+```
+PORT=2083
+```
+
+در Variables وجود داشته باشد.
+
+
+---
+
+## Build Error
+
+ابتدا:
+
+```
+Redeploy
+```
+
+را امتحان کنید.
+
+
+---
+
+## پورت اشتباه
+
+لاگ را بررسی کنید:
+
+```
+Logs → Deployments
+```
+
+---
+
+# 📢 کانال‌ها
+
+## 👨‍💻 Developer
+
+Telegram:
+
+https://t.me/g1ithub
+
+
+---
+
+## 🕷️ SPiDER VPN
+
+Telegram:
+
+https://t.me/SPiDER_VPN1
+
+
+---
+
+# ❤️ حمایت از پروژه
+
+اگر پروژه برای شما مفید بود:
+
+⭐ Star بدهید
+
+و با دوستان خود به اشتراک بگذارید.
+
+---
+
+# ⚠️ Disclaimer
+
+این پروژه برای استفاده شخصی، آموزشی و تستی ارائه شده است.
+
+مسئولیت استفاده از آن بر عهده کاربر است.
+
+---
+
+# 👑 Credits
+
+Developed by:
+
+🕷️ SPiDER VPN Team
+
+Telegram:
+
+https://t.me/SPiDER_VPN1
+
+Developer:
+
+https://t.me/g1ithub
